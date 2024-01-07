@@ -5,7 +5,7 @@ date:   2024-1-7 10:24:00 +0530
 categories: frontend react
 ---
 
-React principles & patterns
+### React principles & patterns
 - Component is a dynamic piece of UI.  Each component is defined by a function which outputs html. 
 - Every page is built of Components
 - Each file in react has a main component it exports
@@ -15,7 +15,7 @@ React principles & patterns
 - State change trickles down the component tree and only the changed components are re-rendered
 - Functions to change state can also be passed down to smaller/inner components. An action on inner component can change state of outer component only in this way, cannot change state of outer component directly
 
-Example game(tic tac toe from react tutorial page):
+### Example game(tic tac toe from react tutorial page):
 
 ```js
 function Square({value, onSquareClick}) {
@@ -110,8 +110,7 @@ export default function Game() {
 
 ```
 
-You can try the app [here](https://tictactoe-17ec4.web.app/)
-
+You can try the deployed app [here](https://tictactoe-17ec4.web.app/)
 
 To be continued in part 2...
 - Why React?
