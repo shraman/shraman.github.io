@@ -3,21 +3,21 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>React js for backend devs | Let’s Build</title>
+<title>React js for backend devs - part 1 | Let’s Build</title>
 <meta name="generator" content="Jekyll v3.9.3" />
-<meta property="og:title" content="React js for backend devs" />
+<meta property="og:title" content="React js for backend devs - part 1" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Revisiting frontend development after years, starting with react" />
-<meta property="og:description" content="Revisiting frontend development after years, starting with react" />
+<meta name="description" content="React principles &amp; patterns Component is a dynamic piece of UI. Each component is defined by a function which outputs html. Every page is built of Components Each file in react has a main component it exports Bigger components comprise of smaller components A component can have it’s own state, state is passed down to smaller/inner components as properties Change in state/props -&gt; Components re-render (framework reacts) State change trickles down the component tree and only the changed components are re-rendered Functions to change state can also be passed down to smaller/inner components. An action on inner component can change state of outer component only in this way, cannot change state of outer component directly" />
+<meta property="og:description" content="React principles &amp; patterns Component is a dynamic piece of UI. Each component is defined by a function which outputs html. Every page is built of Components Each file in react has a main component it exports Bigger components comprise of smaller components A component can have it’s own state, state is passed down to smaller/inner components as properties Change in state/props -&gt; Components re-render (framework reacts) State change trickles down the component tree and only the changed components are re-rendered Functions to change state can also be passed down to smaller/inner components. An action on inner component can change state of outer component only in this way, cannot change state of outer component directly" />
 <link rel="canonical" href="http://localhost:4000/frontend/react/2023/12/31/welcome-to-jekyll.html" />
 <meta property="og:url" content="http://localhost:4000/frontend/react/2023/12/31/welcome-to-jekyll.html" />
 <meta property="og:site_name" content="Let’s Build" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2023-12-31T12:27:41+05:30" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="React js for backend devs" />
+<meta property="twitter:title" content="React js for backend devs - part 1" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-12-31T12:27:41+05:30","datePublished":"2023-12-31T12:27:41+05:30","description":"Revisiting frontend development after years, starting with react","headline":"React js for backend devs","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/frontend/react/2023/12/31/welcome-to-jekyll.html"},"url":"http://localhost:4000/frontend/react/2023/12/31/welcome-to-jekyll.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-12-31T12:27:41+05:30","datePublished":"2023-12-31T12:27:41+05:30","description":"React principles &amp; patterns Component is a dynamic piece of UI. Each component is defined by a function which outputs html. Every page is built of Components Each file in react has a main component it exports Bigger components comprise of smaller components A component can have it’s own state, state is passed down to smaller/inner components as properties Change in state/props -&gt; Components re-render (framework reacts) State change trickles down the component tree and only the changed components are re-rendered Functions to change state can also be passed down to smaller/inner components. An action on inner component can change state of outer component only in this way, cannot change state of outer component directly","headline":"React js for backend devs - part 1","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/frontend/react/2023/12/31/welcome-to-jekyll.html"},"url":"http://localhost:4000/frontend/react/2023/12/31/welcome-to-jekyll.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Let&apos;s Build" /></head>
 <body><header class="site-header" role="banner">
@@ -40,14 +40,128 @@
         <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">React js for backend devs</h1>
+    <h1 class="post-title p-name" itemprop="name headline">React js for backend devs - part 1</h1>
     <p class="post-meta">
       <time class="dt-published" datetime="2023-12-31T12:27:41+05:30" itemprop="datePublished">Dec 31, 2023
       </time></p>
   </header>
 
   <div class="post-content e-content" itemprop="articleBody">
-    <p>Revisiting frontend development after years, starting with react</p>
+    <p>React principles &amp; patterns</p>
+<ul>
+  <li>Component is a dynamic piece of UI.  Each component is defined by a function which outputs html.</li>
+  <li>Every page is built of Components</li>
+  <li>Each file in react has a main component it exports</li>
+  <li>Bigger components comprise of smaller components</li>
+  <li>A component can have it’s own state, state is passed down to smaller/inner components as properties</li>
+  <li>Change in state/props -&gt; Components re-render (framework reacts)</li>
+  <li>State change trickles down the component tree and only the changed components are re-rendered</li>
+  <li>Functions to change state can also be passed down to smaller/inner components. An action on inner component can change state of outer component only in this way, cannot change state of outer component directly</li>
+</ul>
+
+<p>Example game(tic tac toe from react tutorial page):</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">Square</span><span class="p">({</span><span class="nx">value</span><span class="p">,</span> <span class="nx">onSquareClick</span><span class="p">})</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">square</span><span class="dl">"</span> <span class="nx">onClick</span><span class="o">=</span><span class="p">{</span><span class="nx">onSquareClick</span><span class="p">}</span><span class="o">&gt;</span>
+      <span class="p">{</span><span class="nx">value</span><span class="p">}</span>
+    <span class="o">&lt;</span><span class="sr">/button</span><span class="err">&gt;
+</span>  <span class="p">);</span>
+
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">Board</span><span class="p">({</span> <span class="nx">xIsNext</span><span class="p">,</span> <span class="nx">squares</span><span class="p">,</span> <span class="nx">onPlay</span> <span class="p">})</span> <span class="p">{</span>
+
+  <span class="kd">function</span> <span class="nx">handleClick</span><span class="p">(</span><span class="nx">i</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">squares</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">||</span> <span class="nx">calculateWinner</span><span class="p">(</span><span class="nx">squares</span><span class="p">))</span> <span class="p">{</span>
+      <span class="k">return</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="kd">const</span> <span class="nx">nextSquares</span> <span class="o">=</span> <span class="nx">squares</span><span class="p">.</span><span class="nx">slice</span><span class="p">();</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">xIsNext</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">nextSquares</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">X</span><span class="dl">"</span><span class="p">;</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="nx">nextSquares</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">O</span><span class="dl">"</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="nx">onPlay</span><span class="p">(</span><span class="nx">nextSquares</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="o">&lt;&gt;</span>
+      <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">status</span><span class="dl">"</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">status</span><span class="p">}</span><span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>      <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">board-row</span><span class="dl">"</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nx">Square</span> <span class="nx">value</span><span class="o">=</span><span class="p">{</span><span class="nx">squares</span><span class="p">[</span><span class="mi">0</span><span class="p">]}</span> <span class="nx">onSquareClick</span><span class="o">=</span><span class="p">{()</span> <span class="o">=&gt;</span> <span class="nx">handleClick</span><span class="p">(</span><span class="mi">0</span><span class="p">)}</span> <span class="sr">/</span><span class="err">&gt;
+</span>        <span class="o">&lt;</span><span class="nx">Square</span> <span class="nx">value</span><span class="o">=</span><span class="p">{</span><span class="nx">squares</span><span class="p">[</span><span class="mi">1</span><span class="p">]}</span> <span class="nx">onSquareClick</span><span class="o">=</span><span class="p">{()</span> <span class="o">=&gt;</span> <span class="nx">handleClick</span><span class="p">(</span><span class="mi">1</span><span class="p">)}</span> <span class="sr">/</span><span class="err">&gt;
+</span>        <span class="o">&lt;</span><span class="nx">Square</span> <span class="nx">value</span><span class="o">=</span><span class="p">{</span><span class="nx">squares</span><span class="p">[</span><span class="mi">2</span><span class="p">]}</span> <span class="nx">onSquareClick</span><span class="o">=</span><span class="p">{()</span> <span class="o">=&gt;</span> <span class="nx">handleClick</span><span class="p">(</span><span class="mi">2</span><span class="p">)}</span> <span class="sr">/</span><span class="err">&gt;
+</span>      <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>      <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">board-row</span><span class="dl">"</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nx">Square</span> <span class="nx">value</span><span class="o">=</span><span class="p">{</span><span class="nx">squares</span><span class="p">[</span><span class="mi">3</span><span class="p">]}</span> <span class="nx">onSquareClick</span><span class="o">=</span><span class="p">{()</span> <span class="o">=&gt;</span> <span class="nx">handleClick</span><span class="p">(</span><span class="mi">3</span><span class="p">)}</span> <span class="sr">/</span><span class="err">&gt;
+</span>        <span class="o">&lt;</span><span class="nx">Square</span> <span class="nx">value</span><span class="o">=</span><span class="p">{</span><span class="nx">squares</span><span class="p">[</span><span class="mi">4</span><span class="p">]}</span> <span class="nx">onSquareClick</span><span class="o">=</span><span class="p">{()</span> <span class="o">=&gt;</span> <span class="nx">handleClick</span><span class="p">(</span><span class="mi">4</span><span class="p">)}</span> <span class="sr">/</span><span class="err">&gt;
+</span>        <span class="o">&lt;</span><span class="nx">Square</span> <span class="nx">value</span><span class="o">=</span><span class="p">{</span><span class="nx">squares</span><span class="p">[</span><span class="mi">5</span><span class="p">]}</span> <span class="nx">onSquareClick</span><span class="o">=</span><span class="p">{()</span> <span class="o">=&gt;</span> <span class="nx">handleClick</span><span class="p">(</span><span class="mi">5</span><span class="p">)}</span> <span class="sr">/</span><span class="err">&gt;
+</span>      <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>      <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">board-row</span><span class="dl">"</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nx">Square</span> <span class="nx">value</span><span class="o">=</span><span class="p">{</span><span class="nx">squares</span><span class="p">[</span><span class="mi">6</span><span class="p">]}</span> <span class="nx">onSquareClick</span><span class="o">=</span><span class="p">{()</span> <span class="o">=&gt;</span> <span class="nx">handleClick</span><span class="p">(</span><span class="mi">6</span><span class="p">)}</span> <span class="sr">/</span><span class="err">&gt;
+</span>        <span class="o">&lt;</span><span class="nx">Square</span> <span class="nx">value</span><span class="o">=</span><span class="p">{</span><span class="nx">squares</span><span class="p">[</span><span class="mi">7</span><span class="p">]}</span> <span class="nx">onSquareClick</span><span class="o">=</span><span class="p">{()</span> <span class="o">=&gt;</span> <span class="nx">handleClick</span><span class="p">(</span><span class="mi">7</span><span class="p">)}</span> <span class="sr">/</span><span class="err">&gt;
+</span>        <span class="o">&lt;</span><span class="nx">Square</span> <span class="nx">value</span><span class="o">=</span><span class="p">{</span><span class="nx">squares</span><span class="p">[</span><span class="mi">8</span><span class="p">]}</span> <span class="nx">onSquareClick</span><span class="o">=</span><span class="p">{()</span> <span class="o">=&gt;</span> <span class="nx">handleClick</span><span class="p">(</span><span class="mi">8</span><span class="p">)}</span> <span class="sr">/</span><span class="err">&gt;
+</span>      <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>    <span class="o">&lt;</span><span class="sr">/</span><span class="err">&gt;
+</span>  <span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">export</span> <span class="k">default</span> <span class="kd">function</span> <span class="nx">Game</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="p">[</span><span class="nx">xIsNext</span><span class="p">,</span> <span class="nx">setXIsNext</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
+  <span class="kd">const</span> <span class="p">[</span><span class="nx">history</span><span class="p">,</span> <span class="nx">setHistory</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">([</span><span class="nb">Array</span><span class="p">(</span><span class="mi">9</span><span class="p">).</span><span class="nx">fill</span><span class="p">(</span><span class="kc">null</span><span class="p">)]);</span>
+  <span class="kd">const</span> <span class="p">[</span><span class="nx">currentMove</span><span class="p">,</span> <span class="nx">setCurrentMove</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+  <span class="kd">const</span> <span class="nx">currentSquares</span> <span class="o">=</span> <span class="nx">history</span><span class="p">[</span><span class="nx">currentMove</span><span class="p">];</span>
+
+  <span class="kd">function</span> <span class="nx">handlePlay</span><span class="p">(</span><span class="nx">nextSquares</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">nextHistory</span> <span class="o">=</span> <span class="p">[...</span><span class="nx">history</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nx">currentMove</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span> <span class="nx">nextSquares</span><span class="p">];</span>
+    <span class="nx">setHistory</span><span class="p">(</span><span class="nx">nextHistory</span><span class="p">);</span>
+    <span class="nx">setCurrentMove</span><span class="p">(</span><span class="nx">nextHistory</span><span class="p">.</span><span class="nx">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span>
+    <span class="nx">setXIsNext</span><span class="p">(</span><span class="o">!</span><span class="nx">xIsNext</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="kd">function</span> <span class="nx">jumpTo</span><span class="p">(</span><span class="nx">nextMove</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">setCurrentMove</span><span class="p">(</span><span class="nx">nextMove</span><span class="p">);</span>
+    <span class="nx">setXIsNext</span><span class="p">(</span><span class="nx">nextMove</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">===</span> <span class="mi">0</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="kd">const</span> <span class="nx">moves</span> <span class="o">=</span> <span class="nx">history</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">squares</span><span class="p">,</span> <span class="nx">move</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nx">description</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">move</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">description</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">Go to move #</span><span class="dl">'</span> <span class="o">+</span> <span class="nx">move</span><span class="p">;</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="nx">description</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">Go to game start</span><span class="dl">'</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="p">(</span>
+      <span class="o">&lt;</span><span class="nx">li</span> <span class="nx">key</span><span class="o">=</span><span class="p">{</span><span class="nx">move</span><span class="p">}</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">onClick</span><span class="o">=</span><span class="p">{()</span> <span class="o">=&gt;</span> <span class="nx">jumpTo</span><span class="p">(</span><span class="nx">move</span><span class="p">)}</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">description</span><span class="p">}</span><span class="o">&lt;</span><span class="sr">/button</span><span class="err">&gt;
+</span>      <span class="o">&lt;</span><span class="sr">/li</span><span class="err">&gt;
+</span>    <span class="p">);</span>
+  <span class="p">});</span>
+
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">game</span><span class="dl">"</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">game-board</span><span class="dl">"</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nx">Board</span> <span class="nx">xIsNext</span><span class="o">=</span><span class="p">{</span><span class="nx">xIsNext</span><span class="p">}</span> <span class="nx">squares</span><span class="o">=</span><span class="p">{</span><span class="nx">currentSquares</span><span class="p">}</span> <span class="nx">onPlay</span><span class="o">=</span><span class="p">{</span><span class="nx">handlePlay</span><span class="p">}</span> <span class="sr">/</span><span class="err">&gt;
+</span>      <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>      <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="dl">"</span><span class="s2">game-info</span><span class="dl">"</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nx">ol</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">moves</span><span class="p">}</span><span class="o">&lt;</span><span class="sr">/ol</span><span class="err">&gt;
+</span>      <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>    <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>  <span class="p">);</span>
+<span class="p">}</span>
+
+</code></pre></div></div>
+
+<p>You can try the app <a href="https://tictactoe-17ec4.web.app/">here</a></p>
+
+<p>To be continued in part 2…</p>
+<ul>
+  <li>Why React?</li>
+  <li>What is the advantage over other frameworks?</li>
+  <li>Why react didn’t go obsolete?</li>
+  <li>Why things are the way they are in react?</li>
+</ul>
 
   </div><a class="u-url" href="/frontend/react/2023/12/31/welcome-to-jekyll.html" hidden></a>
 </article>
