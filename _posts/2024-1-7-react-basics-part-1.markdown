@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "React js for backend devs - part 1"
-date:   2023-12-31 12:27:41 +0530
+date:   2024-1-7 10:24:00 +0530
 categories: frontend react
 ---
 
